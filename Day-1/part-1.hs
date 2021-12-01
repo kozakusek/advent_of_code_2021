@@ -10,9 +10,8 @@ iread :: String -> Int
 iread = read
 
 solution :: [Int] -> Int
-solution [] = 0
-solution (h:t) = snd $ foldl f (h,0) t
-  where
-    f = (\(prev, inc) e  -> if e > prev then (e, inc + 1) else (e, inc))
-  
+solution (h:h':t) 
+  | h' > h = 1 + solution (h':t)
+  | otherwise = 0 + solution (h':t)
 
+solution _ = 0
