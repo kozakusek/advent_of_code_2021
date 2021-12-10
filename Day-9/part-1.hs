@@ -14,9 +14,6 @@ main = do
   input <- hGetContents h
   print $ solution $ (parse input)
 
-iread :: String -> Int
-iread = read
-
 solution :: Map.Map Point Int -> Int
 solution grid = (sum $ Map.map (+ 1) $ 
     Map.filterWithKey (\v k -> all (> k) (mapMaybe (grid Map.!?) (neighbours v))) grid)

@@ -14,9 +14,6 @@ main = do
   input <- hGetContents h
   print $ solution $ (parse input)
 
-iread :: String -> Int
-iread = read
-
 solution :: Map.Map Point Int -> Int
 solution grid = (product $ take 3 $ sortOn Down $ 
   map (Set.size . Set.fromList . basin grid) $ Map.keys grid)
