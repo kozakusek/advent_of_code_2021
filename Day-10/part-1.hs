@@ -1,4 +1,3 @@
-{-# OPTIONS -Wno-incomplete-patterns #-}
 import System.IO
 import Text.Parsec as Parsec (ParseError, char, between, choice, eof, many, parse, ParsecT)
 import Text.Parsec.Error (errorMessages, messageString)
